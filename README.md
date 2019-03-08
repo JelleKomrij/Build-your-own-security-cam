@@ -6,7 +6,7 @@ Workshop details on how to build your own security camera with a ESP32-CAM
 
 ## Connect hardware on breadboard
 
-![picture of breadboard](.\typora-user-images\pinout-usbtottl.jpg)
+![picture of breadboard](./typora-user-images/pinout-usbtottl.jpg)
 
 ![](./typora-user-images/breadboard-overview.JPG)
 
@@ -344,7 +344,7 @@ COM10 is an example of the COM port to flash to, please change to reflect your c
 
 After flashing you will see the following in the monitor:
 
-![1548516464623](.\typora-user-images\1548516464623.png)
+![1548516464623](./typora-user-images/1548516464623.png)
 
 8. Note down the IP address in the monitor and point your browser to <ip adress>/hello
 
@@ -365,7 +365,7 @@ cd ESP32_CAMERA_QR
 make -j4 menuconfig
 ```
 
-![1548517340256](.\typora-user-images\1548517340256.png)
+![1548517340256](./typora-user-images/1548517340256.png)
 
 2. Move into the ESP32 Camera Demo Configuration and change the SSID/password. Also select the QR recognize support.
 
@@ -397,7 +397,7 @@ Make also sure to set  the IDF_PATH correctly to the standard esp-idf and not to
 
 When you align the QR code correctly it will display the following in the monitor:
 
-![1548607851141](.\typora-user-images\1548607851141.png)
+![1548607851141](./typora-user-images/1548607851141.png)
 
 Now create a QR code with the wifi parameters and alter the main_app.c in such a way that it reads these parameters from the QR code and connects to it.
 
@@ -420,7 +420,7 @@ make -j4 menuconfig
 
 3. Set the correct camera config to ESP32-CAM under camera pins
 
-   ![1548539952442](.\typora-user-images\1548539952442.png)
+   ![1548539952442](./typora-user-images/1548539952442.png)
 
 4. Now compile and flash it
 
@@ -432,4 +432,4 @@ make -j4 menuconfig
 
 If you correctly align your face it will enable you to detect, enroll your face and recognize it.
 
-![1548605743828](.\typora-user-images\1548605743828.png)
+![1548605743828](./typora-user-images/1548605743828.png)
