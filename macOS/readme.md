@@ -375,7 +375,7 @@ make -j4 menuconfig
 
 4. Also select the QR recognize support. Press Y in the configuration settings
 
-![QRRECOGNISE](./QRRECOGNISE.png)
+![QRRECOGNISE](./images/QRRECOGNISE.png)
 
 5. Go to component config
 
@@ -403,7 +403,7 @@ make -j4 flash monitor ESPPORT=/dev/cu.usbserial-123456
 
 After flashing you will see the following in the monitor:
 
-![cameratest](./cameratest.png)
+![cameratest](./images/cameratest.png)
 
 13. Note down the IP address in the monitor and point your browser to `<ipadress>/pgm`
 
