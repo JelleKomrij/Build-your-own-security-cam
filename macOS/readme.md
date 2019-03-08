@@ -2,8 +2,6 @@
 
 Workshop details on how to build your own security camera with a ESP32-CAM
 
-![top](./images/top.png)
-
 You already have installed:
 
 1.  **Toolchain**
@@ -327,7 +325,7 @@ make -j4 flash monitor ESPPORT=/dev/cu.usbserial-123456
 
 After flashing you will see the following in the monitor:
 
-![helloworld](/Users/murturtle/Documents/images/helloworld.png)
+![helloworld](./images/helloworld.png)
 
 8. Note down the IP address in the monitor and point your browser to `<ipadress>/hello`
 
@@ -377,7 +375,7 @@ make -j4 menuconfig
 
 4. Also select the QR recognize support. Press Y in the configuration settings
 
-![QRRECOGNISE](/Users/murturtle/Documents/images/QRRECOGNISE.png)
+![QRRECOGNISE](./QRRECOGNISE.png)
 
 5. Go to component config
 
@@ -385,7 +383,7 @@ make -j4 menuconfig
 
 7. Add Y in Support for external, SPI connected RAM field
 
-   ![SPI](/Users/murturtle/Documents/images/SPI.png)
+   ![SPI](./images/SPI.png)
 
 8. Disconnect the ESP32 by removing the USBTOTTL from your laptop
 
@@ -405,7 +403,7 @@ make -j4 flash monitor ESPPORT=/dev/cu.usbserial-123456
 
 After flashing you will see the following in the monitor:
 
-![cameratest](/Users/murturtle/Documents/images/cameratest.png)
+![cameratest](./cameratest.png)
 
 13. Note down the IP address in the monitor and point your browser to `<ipadress>/pgm`
 
