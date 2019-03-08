@@ -2,7 +2,7 @@
 
 Workshop details on how to build your own security camera with a ESP32-CAM
 
-
+This is the Windows version, for macOS go [here](https://github.com/bokse001/Build-your-own-security-cam/blob/master/macOS/readme.md).
 
 ## Connect hardware on breadboard
 
