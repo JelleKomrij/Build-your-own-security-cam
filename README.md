@@ -200,9 +200,9 @@ VCC to the 5V port on your ESP,
 
 As you can see, the 5V port is already in use. So you have to place the 5V cable from the USB to TTL converter and the 5V from the PIR to the + line on your breadboard, and place a male to male cable between this line and the 5V port on the ESP.
 
-![](.\typora-user-images\breadboard-pir.JPG)
+![](./typora-user-images/breadboard-pir.JPG)
 
-![](.\typora-user-images\pir.JPG)
+![](./typora-user-images/pir.JPG)
 
 Now copy over the pir example in esp
 
