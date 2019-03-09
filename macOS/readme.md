@@ -17,7 +17,7 @@ If you are following this workshop from home follow the steps until board setup 
 https://www.Bit.ly/iot-camera
 `
 
-##Connect hardware on breadboard
+## Connect hardware on breadboard
 
 Connect USBTOTTL pin VCC  to ESP pin 5V
 
@@ -29,7 +29,7 @@ Connect USBTOTTL pin TX to ESP pin V0R
 
 ![breadboard-overview](./images/breadboard-overview.JPG)![IMG_5367](./images/IMG_5367.JPG)![breadboard-close](./images/breadboard-close.JPG)
 
-##Prepare your laptop for ESP32 development
+## Prepare your laptop for ESP32 development
 
 Run the following commands in terminal to check if IDF_PATH & PATH is set:
 
@@ -43,7 +43,7 @@ printenv PATH
 
 ![printenvPATH](./images/printenvidfpath.png)
 
-##Test your laptop and ESP-IDF setup
+## Test your laptop and ESP-IDF setup
 
 If you followed our previous workshops you already know what is coming: blink!
 
@@ -54,7 +54,7 @@ you can use later to brighten up the surroundings for the camera.
 ```
 cd ~/esp
 ```
-2. Letâ€™s copy the example blink project to our esp project folder by typing the following command:
+2. Let's copy the example blink project to our esp project folder by typing the following command:
 ```
 cp -r $IDF_PATH/examples/peripherals/ledc .
 ```
@@ -170,15 +170,13 @@ Be patient again, this will take considerable time. First it will compile, then 
 
 You should then see the onboard led flash in a pattern.
 
-##Test to see if the ESP can detect movement
+## Test to see if the ESP can detect movement
 First, we connect a movement sensor, called a PIR sensor to our ESP  board. If you remove the cap from the sensor you see the labels of the  pins.
 
 Connect:
 
 GND on the PIR to a GND port on your ESP
-
 OUT on the PIR to IO2 port on your ESP
-
 VCC to the 5V port on your ESP,
 
 As you can see, the 5V port is already in use. So you have to place  the 5V cable from the USB to TTL converter and the 5V from the PIR to  the + line on your breadboard, and place a male to male cable between  this line and the 5V port on the ESP.
@@ -195,20 +193,20 @@ Now copy over the pir example in esp
 cd ~/esp    cp -r $IDF_PATH/examples/get-started/blink .
 ```
 
-1. now go into that directory by typing:
+2. now go into that directory by typing:
 
 ```
 cd blink
 ```
 
-1. We are now going to edit the code to add the PIR part in the blink code, open in your text editor the  `blink.c`  in the `~/esp/blink/main` folder.
-2. First of all, we are going to define the GPIO port of the PIR sensor (IO2 = GPIO port 2), add this code to the example
+3. We are now going to edit the code to add the PIR part in the blink code, open in your text editor the  `blink.c`  in the `~/esp/blink/main` folder.
+4. First of all, we are going to define the GPIO port of the PIR sensor (IO2 = GPIO port 2), add this code to the example
 
 ```
 #define PIR_GPIO CONFIG_PIR_GPIO
 ```
 
-1. Replace the blink_task by:
+5. Replace the blink_task by:
 
 \```    void blink_task(void *pvParameter)    {
 
@@ -247,19 +245,19 @@ config PIR_GPIO        int "PIR GPIO number"    	range 0 34    	default 2    	he
 
 Save this file, and go back to the command line.
 
-1. In the blink directory type the command: (be patient this might take some time)
+6. In the blink directory type the command: (be patient this might take some time)
 
 ```
 make j4 menuconfig
 ```
 
-1. This will open up configuration menu, from this menu select the Example configuration option
+7. This will open up configuration menu, from this menu select the Example configuration option
 
 ![1548497927173](./images/1548497927173.png)
 
-1. Then select the Blink GPIO number and set it to the 4 , also set the PIR GPIO number to 2.
-2. Save the selections and in the top menu select exit. Be patient after  that; it will start preparing the build with those parameters.
-3. Now we are ready to compile our blink program and flash it to the ESP32-CAM by:
+8. Then select the Blink GPIO number and set it to the 4 , also set the PIR GPIO number to 2.
+9. Save the selections and in the top menu select exit. Be patient after  that; it will start preparing the build with those parameters.
+10. Now we are ready to compile our blink program and flash it to the ESP32-CAM by:
 
 ```
 make -j4 flash monitor ESPPORT=/dev/cu.usbserial-123456
@@ -277,7 +275,7 @@ The first meter is for the delay time after triggering, the second  one for the 
 
 The bridge is made for 'retriggering', which means that the PIR keeps  reading or stops at the moment that it recognize some movement. Set  this bridge to H.
 
-##Test to see if the ESP can hold a webserver
+## Test to see if the ESP can hold a webserver
 First copy over the http_server simple example in esp
 
 1. Copy the example http_server project to our esp project directory:
@@ -332,7 +330,7 @@ After flashing you will see the following in the monitor:
 You should see the message "Hello World!" in your browser
 
 
-##Challenge: combine webserver and movement detection
+## Challenge: combine webserver and movement detection
 
 In this challenge you need to combine the code of the PIR sensor and the simple httpd server so that, when movement is detected, you display this in your webserver.
 
@@ -358,60 +356,59 @@ make -j4 menuconfig
 
 if your working from home:
 
-1. Start by cloning the following github to your laptop and start the configuration:
+2. Start by cloning the following github to your laptop and start the configuration:
 
 ```
 cd ~/esp
 git clone --recursive https://github.com/donny681/ESP32_CAMERA_QR
 ```
-2. Op the Camera QR directory & open the menuconfiguration
+3. Open the Camera QR directory & open the menuconfiguration
 
 ```
 cd ESP32_CAMERA_QR
 make -j4 menuconfig
 ```
 
-3. Move into the ESP32 Camera Demo Configuration and change the SSID/password.
-
-4. Also select the QR recognize support. Press Y in the configuration settings
+4. Move into the ESP32 Camera Demo Configuration and change the SSID/password.
+5. Also select the QR recognize support. Press Y in the configuration settings
 
 ![QRRECOGNISE](./images/QRRECOGNISE.png)
 
-5. Go to component config
+6. Go to component config
 
-6. Go to Esp-32 specific
+7. Go to Esp-32 specific
 
-7. Add Y in Support for external, SPI connected RAM field
+8. Add Y in Support for external, SPI connected RAM field
 
    ![SPI](./images/SPI.png)
 
-8. Disconnect the ESP32 by removing the USBTOTTL from your laptop
+9. Disconnect the ESP32 by removing the USBTOTTL from your laptop
 
-9. To upload our program to the ESP32-CAM, we have to set it in 'Download' 
+10. To upload our program to the ESP32-CAM, we have to set it in 'Download' 
    mode, it can be done by connecting a jumper cable to`GND port` and `1O0 port`
 
     ![IMG_5368](./images/IMG_5368.JPG)
 
- 10. Connect the ESP32 board to your laptop using the USBTOTTL cable. 
+11. Connect the ESP32 board to your laptop using the USBTOTTL cable. 
 
- 11. Now we can flash the board by: 
+12. Now we can flash the board by: 
 ```
 make -j4 flash monitor ESPPORT=/dev/cu.usbserial-123456
 ```
 
-12. Remove the jumper cable and restart the device by pressing the reboot button on the bottom of the device. 
+13. Remove the jumper cable and restart the device by pressing the reboot button on the bottom of the device. 
 
 After flashing you will see the following in the monitor:
 
 ![cameratest](./images/cameratest.png)
 
-13. Note down the IP address in the monitor and point your browser to `<ipadress>/pgm`
+14. Note down the IP address in the monitor and point your browser to `<ipadress>/pgm`
 
 to make a single picture. 
 
 
 
-##Challenge: use a QR code to get the Wifi connection params and connect the ESP
+## Challenge: use a QR code to get the Wifi connection params and connect the ESP
 
 1. For this the following must be changed in the main/main_app.c:
 
