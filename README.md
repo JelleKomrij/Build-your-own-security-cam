@@ -119,6 +119,7 @@ export IDF_PATH="/home/[your-username]/esp/esp-who/esp-idf"
 
    ```
    cd ~/esp
+   cp -r $IDF_PATH/examples/peripherals/ledc . 
    ```
 
 2. We have to make some changes in the code, so open your code editor and go to the `ledc_example_main.c` in the `~/esp/ledc/main` folder.
