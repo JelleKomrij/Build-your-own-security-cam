@@ -48,7 +48,7 @@ Preparation of development environment consists of three steps:
 
 2. Unzip the file somewhere on your laptop where you have the space for it
 
-3. Now open the MSYS command shell from the just created folder **msys32** called **mingw32.exe**.![1548489418710](.\typora-user-images\1548489418710.png)
+3. Now open the MSYS command shell from the just created folder **msys32** called **mingw32.exe**.![1548489418710](./typora-user-images\1548489418710.png)
 
 4. We need a directory to store our project in called esp, so run the command 
 
@@ -169,7 +169,7 @@ export IDF_PATH="/home/[your-username]/esp/esp-who/esp-idf"
 
 5. Remember the COM port, we need this in the next step
 
-6. To upload our program to the ESP32-CAM, we have to set it in 'Download' mode, it can be done by connecting a jumper cable to port IO0 and GND, then we have to press the reset button on the ESP32-CAM, unfortunately it is on the bottom.
+6. To upload our program to the ESP32-CAM, we have to set it in 'Download' mode, it can be done by connecting a jumper cable to port IO0 and GND, then we have to press the reset button on the ESP32-CAM, unfortunately it is on the bottom so use the wooden stirrer.
 7. Now we are ready to compile our blink program and flash it to the ESP32-CAM by:
 
 ```
@@ -180,7 +180,8 @@ make -j4 flash monitor ESPPORT=COM10
 
 COM10 is an example of the COM port to flash to, please change to reflect your COM port.
 
-Be patient again, this will take considerable time. First it will compile, then build and finally program the ESP. With the "monitor" addition it will directly monitor for incoming messages via the serial from the ESP after it restarts.
+Be patient again, this will take considerable time. First it will compile, then build and finally program the ESP. After it has flashed remove the jumper cable and press the reset button. 
+With the "monitor" addition it will directly monitor for incoming messages via the serial from the ESP after it restarts.
 
 You should then see the onboard led flash in a fading pattern. 
 
