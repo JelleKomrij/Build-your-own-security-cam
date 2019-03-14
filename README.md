@@ -48,7 +48,7 @@ Preparation of development environment consists of three steps:
 
 2. Unzip the file somewhere on your laptop where you have the space for it
 
-3. Now open the MSYS command shell from the just created folder **msys32** called **mingw32.exe**.![1548489418710](./typora-user-images\1548489418710.png)
+3. Now open the MSYS command shell from the just created folder **msys32** called **mingw32.exe**.![1548489418710](./typora-user-images/1548489418710.png)
 
 4. We need a directory to store our project in called esp, so run the command 
 
