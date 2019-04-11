@@ -190,7 +190,8 @@ Now copy over the pir example in esp
 1. First lets copy the example blink project to our esp project directory:
 
 ```
-cd ~/esp    cp -r $IDF_PATH/examples/get-started/blink .
+cd ~/esp
+cp -r $IDF_PATH/examples/get-started/blink .
 ```
 
 2. now go into that directory by typing:
@@ -208,9 +209,9 @@ cd blink
 
 5. Replace the blink_task by:
 
-\```    void blink_task(void *pvParameter)    {
-
 ```
+void blink_task(void *pvParameter)    {
+
    gpio_pad_select_gpio(PIR_GPIO); //initialize GPIO port for PIR
    gpio_pad_select_gpio(BLINK_GPIO); //and also for the led
 
@@ -231,16 +232,21 @@ cd blink
        }
        vTaskDelay(500 / portTICK_PERIOD_MS); //Wait 0,5 seconds before trying again
    }
-```
 
-}    ```
+}
+```
 
 Save this file. 
 
 We also need to change the configuration menu, so open in your code editor the `Kconfig.projbuild` file (in the same folder as blink.c) and add 
 
 ```
-config PIR_GPIO        int "PIR GPIO number"    	range 0 34    	default 2    	help    		GPIO number (IOxx) to see value of PIR sensor.
+config PIR_GPIO
+  int "PIR GPIO number"
+  range 0 34
+  default 2
+  help
+    GPIO number (IOxx) to see value of PIR sensor.
 ```
 
 Save this file, and go back to the command line.
@@ -248,16 +254,19 @@ Save this file, and go back to the command line.
 6. In the blink directory type the command: (be patient this might take some time)
 
 ```
-make j4 menuconfig
+make -j4 menuconfig
 ```
 
-7. This will open up configuration menu, from this menu select the Example configuration option
+7. This will open up configuration menu, from this menu select the __Example configuration__ option
 
 ![1548497927173](./images/1548497927173.png)
 
 8. Then select the Blink GPIO number and set it to the 4 , also set the PIR GPIO number to 2.
 9. Save the selections and in the top menu select exit. Be patient after  that; it will start preparing the build with those parameters.
-10. Now we are ready to compile our blink program and flash it to the ESP32-CAM by:
+10. Disconnect  the ESP32 by removing the USBTOTTL from your laptop . 
+To upload our program to the ESP32-CAM, we have to set it in 'Download' 
+   mode, it can be done by connecting a jumper cable to`GND port` and `1O0 port`
+11. Now we are ready to compile our blink program and flash it to the ESP32-CAM by:
 
 ```
 make -j4 flash monitor ESPPORT=/dev/cu.usbserial-123456
@@ -280,7 +289,8 @@ First copy over the http_server simple example in esp
 
 1. Copy the example http_server project to our esp project directory:
 ```
-cd ~/esp cp -r $IDF_PATH/examples/protocols/http_server/simple .
+cd ~/esp 
+cp -r $IDF_PATH/examples/protocols/http_server/simple .
 ```
 
 2. Now go into that directory by typing:
