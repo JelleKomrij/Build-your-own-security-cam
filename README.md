@@ -86,6 +86,7 @@ To setup the ESP-IDF development framework to start developing you own projects 
 
    ```
    pacman -S mingw-w64-i686-python2-cryptography
+   pacman -S mingw-w64-i686-gcc
    ```
 
    Just press enter on the question 
